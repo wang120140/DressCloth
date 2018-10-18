@@ -1,0 +1,16 @@
+[{
+    "name": "HomeBg_png",
+    "url": "./img/HomeBg.png"
+}, {
+    "name": "Boy_png",
+    "url": "./img/Boy.png"
+}, {
+    "name": "Girl_png",
+    "url": "./img/Girl.png"
+}, {
+    "name": "BaseRoom_png",
+    "url": "./img/scene/BaseRoom.jpg"
+}, {
+    "name": "Boy_spine",
+    "url": "./img/boyskeleton/monster1.json"
+}]
