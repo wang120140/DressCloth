@@ -1,0 +1,104 @@
+{
+    "boy": {
+        "skin-cap": ["skin1-cap"],
+        "skin-glasses": ["skin1-glasses", "skin3-glasses"],
+        "skin-hairpin": ["skin2-hairpin"],
+        "skin-props": ["skin2-props", "skin2-props"],
+        "skin-shdL": ["skin5-shdL", "skin6-shdL", "skin7-shdL", "skin8-shdL", "skin9-shdL", "skin10-shdL"],
+        "skin-shdR": ["skin5-shdR", "skin6-shdR", "skin7-shdR", "skin8-shdR", "skin9-shdR", "skin10-shdR"],
+        "skin-shirt": ["skin1-shirt1", "skin2-shirt1", "skin3-shirt1", "skin4-shirt1", "skin5-shirt1", "skin6-shirt1", "skin7-shirt1", "skin8-shirt1", "skin9-shirt1", "skin10-shirt1"],
+        "skin-shorts": ["skin1-shorts", "skin2-shorts", "skin3-shorts", "skin4-shorts", "skin5-shorts", "skin6-shorts", "skin7-shorts", "skin8-shorts", "skin9-shorts", "skin10-shorts"],
+        "skin-shoseL": ["skin1-shoseL", "skin2-shoseL", "skin3-shoseL", "skin4-shoseL", "skin5-shoseL", "skin6-shoseL", "skin7-shoseL", "skin8-shoseL", "skin9-shoseL", "skin10-shoseL"],
+        "skin-shoseR": ["skin1-shoseR", "skin2-shoseR", "skin3-shoseR", "skin4-shoseR", "skin5-shoseR", "skin6-shoseR", "skin7-shoseR", "skin8-shoseR", "skin9-shoseR", "skin10-shoseR"]
+    },
+    "classIconsArr": [
+        "classicon_suit_png",
+        "classicon_tshirt_png",
+        "classicon_shorts_png",
+        "classicon_shoes_png",
+        "classicon_cap_png",
+        "classicon_glasses_png",
+        "classicon_hairpin_png",
+        "classicon_props_png",
+        "classicon_scene_png"
+    ],
+    "particularClothes": {
+        "cap": [
+            "clothes_clean_png",
+            "boy_clothes_cap01_png"
+        ],
+        "glasses": [
+            "clothes_clean_png",
+            "boy_clothes_glasses01_png",
+            "boy_clothes_glasses02_png"
+        ],
+        "hairpin": [
+            "clothes_clean_png",
+            "boy_clothes_hairpin01_png"
+        ],
+        "shoes": [
+            "clothes_clean_png",
+            "boy_clothes_shoes01_png",
+            "boy_clothes_shoes02_png",
+            "boy_clothes_shoes03_png",
+            "boy_clothes_shoes04_png",
+            "boy_clothes_shoes05_png",
+            "boy_clothes_shoes06_png",
+            "boy_clothes_shoes07_png",
+            "boy_clothes_shoes08_png",
+            "boy_clothes_shoes09_png",
+            "boy_clothes_shoes10_png"
+        ],
+        "shorts": [
+            "clothes_clean_png",
+            "boy_clothes_shorts01_png",
+            "boy_clothes_shorts02_png",
+            "boy_clothes_shorts03_png",
+            "boy_clothes_shorts04_png",
+            "boy_clothes_shorts05_png",
+            "boy_clothes_shorts06_png",
+            "boy_clothes_shorts07_png",
+            "boy_clothes_shorts08_png",
+            "boy_clothes_shorts09_png",
+            "boy_clothes_shorts10_png"
+        ],
+        "suit": [
+            "clothes_clean_png",
+            "boy_clothes_suit01_png",
+            "boy_clothes_suit02_png",
+            "boy_clothes_suit03_png",
+            "boy_clothes_suit04_png",
+            "boy_clothes_suit05_png",
+            "boy_clothes_suit06_png",
+            "boy_clothes_suit07_png",
+            "boy_clothes_suit08_png",
+            "boy_clothes_suit09_png",
+            "boy_clothes_suit10_png"
+        ],
+        "tshirt": [
+            "clothes_clean_png",
+            "boy_clothes_tshirt01_png",
+            "boy_clothes_tshirt02_png",
+            "boy_clothes_tshirt04_png",
+            "boy_clothes_tshirt05_png",
+            "boy_clothes_tshirt06_png",
+            "boy_clothes_tshirt07_png",
+            "boy_clothes_tshirt08_png",
+            "boy_clothes_tshirt09_png",
+            "boy_clothes_tshirt10_png"
+        ],
+        "props": [
+            "clothes_clean_png",
+            "boy_clothes_props01_png",
+            "boy_clothes_props02_png"
+        ],
+        "scene": [
+            "clothes_clean_png",
+            "monster_clothes_scene01_png",
+            "monster_clothes_scene02_png",
+            "monster_clothes_scene04_png",
+            "monster_clothes_scene05_png",
+            "monster_clothes_scene06_png"
+        ]
+    }
+}
