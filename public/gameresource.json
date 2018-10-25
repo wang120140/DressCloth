@@ -18,7 +18,7 @@
     "url": "./img/boyclothes/suit-s.png"
 }, {
     "name": "classicon_tshirt_png",
-    "url": "./img/boyclothes/shirt-s.png"
+    "url": "./img/boyclothes/tshirt-s.png"
 }, {
     "name": "classicon_shorts_png",
     "url": "./img/boyclothes/shorts.png"
@@ -44,6 +44,39 @@
     "name": "clothes_clean_png",
     "url": "./img/boyclothes/clean.png"
 }, {
+    "name": "classicon_cap_png_s",
+    "url": "./img/classIcon/cap-s.png"
+}, {
+    "name": "classicon_dress_png_s",
+    "url": "./img/classIcon/dress-s.png"
+}, {
+    "name": "classicon_glasses_png_s",
+    "url": "./img/classIcon/glasses-s.png"
+}, {
+    "name": "classicon_hairpin_png_s",
+    "url": "./img/classIcon/hairpin-s.png"
+}, {
+    "name": "classicon_props_png_s",
+    "url": "./img/classIcon/props-s.png"
+}, {
+    "name": "classicon_scene_png_s",
+    "url": "./img/classIcon/scene-s.png"
+}, {
+    "name": "classicon_shoes_png_s",
+    "url": "./img/classIcon/shoes-s.png"
+}, {
+    "name": "classicon_skirt_png_s",
+    "url": "./img/classIcon/skirt-s.png"
+}, {
+    "name": "classicon_suit_png_s",
+    "url": "./img/classIcon/suit-s.png"
+}, {
+    "name": "classicon_shorts_png_s",
+    "url": "./img/classIcon/shorts-s.png"
+}, {
+    "name": "classicon_tshirt_png_s",
+    "url": "./img/classIcon/tshirt-s.png"
+}, {
     "name": "boy_clothes_cap01_png",
     "url": "./img/boyclothes/cap/cap01.png"
 }, {
@@ -56,35 +89,35 @@
     "name": "boy_clothes_hairpin01_png",
     "url": "./img/boyclothes/hairpin/hairpin01.png"
 }, {
-    "name": "boy_clothes_shoes01_png",
-    "url": "./img/boyclothes/shoes/shoes01.png"
+    "name": "boy_clothes_shose01_png",
+    "url": "./img/boyclothes/shose/shose01.png"
 }, {
-    "name": "boy_clothes_shoes02_png",
-    "url": "./img/boyclothes/shoes/shoes02.png"
+    "name": "boy_clothes_shose02_png",
+    "url": "./img/boyclothes/shose/shose02.png"
 }, {
-    "name": "boy_clothes_shoes03_png",
-    "url": "./img/boyclothes/shoes/shoes03.png"
+    "name": "boy_clothes_shose03_png",
+    "url": "./img/boyclothes/shose/shose03.png"
 }, {
-    "name": "boy_clothes_shoes04_png",
-    "url": "./img/boyclothes/shoes/shoes04.png"
+    "name": "boy_clothes_shose04_png",
+    "url": "./img/boyclothes/shose/shose04.png"
 }, {
-    "name": "boy_clothes_shoes05_png",
-    "url": "./img/boyclothes/shoes/shoes05.png"
+    "name": "boy_clothes_shose05_png",
+    "url": "./img/boyclothes/shose/shose05.png"
 }, {
-    "name": "boy_clothes_shoes06_png",
-    "url": "./img/boyclothes/shoes/shoes06.png"
+    "name": "boy_clothes_shose06_png",
+    "url": "./img/boyclothes/shose/shose06.png"
 }, {
-    "name": "boy_clothes_shoes07_png",
-    "url": "./img/boyclothes/shoes/shoes07.png"
+    "name": "boy_clothes_shose07_png",
+    "url": "./img/boyclothes/shose/shose07.png"
 }, {
-    "name": "boy_clothes_shoes08_png",
-    "url": "./img/boyclothes/shoes/shoes08.png"
+    "name": "boy_clothes_shose08_png",
+    "url": "./img/boyclothes/shose/shose08.png"
 }, {
-    "name": "boy_clothes_shoes09_png",
-    "url": "./img/boyclothes/shoes/shoes09.png"
+    "name": "boy_clothes_shose09_png",
+    "url": "./img/boyclothes/shose/shose09.png"
 }, {
-    "name": "boy_clothes_shoes10_png",
-    "url": "./img/boyclothes/shoes/shoes10.png"
+    "name": "boy_clothes_shose10_png",
+    "url": "./img/boyclothes/shose/shose10.png"
 }, {
     "name": "boy_clothes_shorts01_png",
     "url": "./img/boyclothes/shorts/shorts01.png"
@@ -146,34 +179,34 @@
     "name": "boy_clothes_suit10_png",
     "url": "./img/boyclothes/suit/suit10.png"
 }, {
-    "name": "boy_clothes_tshirt01_png",
+    "name": "boy_clothes_shirt01_png",
     "url": "./img/boyclothes/tshirt/tshirt01.png"
 }, {
-    "name": "boy_clothes_tshirt02_png",
+    "name": "boy_clothes_shirt02_png",
     "url": "./img/boyclothes/tshirt/tshirt02.png"
 }, {
-    "name": "boy_clothes_tshirt03_png",
+    "name": "boy_clothes_shirt03_png",
     "url": "./img/boyclothes/tshirt/tshirt03.png"
 }, {
-    "name": "boy_clothes_tshirt04_png",
+    "name": "boy_clothes_shirt04_png",
     "url": "./img/boyclothes/tshirt/tshirt04.png"
 }, {
-    "name": "boy_clothes_tshirt05_png",
+    "name": "boy_clothes_shirt05_png",
     "url": "./img/boyclothes/tshirt/tshirt05.png"
 }, {
-    "name": "boy_clothes_tshirt06_png",
+    "name": "boy_clothes_shirt06_png",
     "url": "./img/boyclothes/tshirt/tshirt06.png"
 }, {
-    "name": "boy_clothes_tshirt07_png",
+    "name": "boy_clothes_shirt07_png",
     "url": "./img/boyclothes/tshirt/tshirt07.png"
 }, {
-    "name": "boy_clothes_tshirt08_png",
+    "name": "boy_clothes_shirt08_png",
     "url": "./img/boyclothes/tshirt/tshirt08.png"
 }, {
-    "name": "boy_clothes_tshirt09_png",
+    "name": "boy_clothes_shirt09_png",
     "url": "./img/boyclothes/tshirt/tshirt09.png"
 }, {
-    "name": "boy_clothes_tshirt10_png",
+    "name": "boy_clothes_shirt10_png",
     "url": "./img/boyclothes/tshirt/tshirt10.png"
 }, {
     "name": "boy_clothes_props01_png",
@@ -196,4 +229,16 @@
 }, {
     "name": "monster_clothes_scene06_png",
     "url": "./img/scene/scene06.png"
-}]   
+}, {
+    "name": "classbtns_png",
+    "url": "./img/classbtns.png"
+}, {
+    "name": "decoratebtns_png",
+    "url": "./img/decoratebtns.png"
+}, {
+    "name": "shadowline_png",
+    "url": "./img/shadowline.png"
+}, {
+    "name": "pullout",
+    "url": "./sound/pullout.mp3"
+}]

@@ -94,7 +94,6 @@ export default class HomePages extends PIXI.Container {
                         mySwiper.slideTo(mySwiper.realIndex)
                     }
                 });
-
                 mySwiper.slidesArr[0].addChild(this.Boy);
                 mySwiper.slidesArr[1].addChild(this.Girl);
                 this.Boy.on("pointertap", this.BoyEvent = () => {

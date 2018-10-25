@@ -53,7 +53,6 @@ export default {
       console.log("游戏资源加载完毕...");
     },
     getPromise_resource() {
-      console.log("获取新的资源...");
       let self = this;
       return new Promise(resolve => {
         self.axios.get("./clothSystem.json").then(response => {
@@ -61,7 +60,6 @@ export default {
           Garbage.setGarBage("ClothSystem", response.data);
         });
         self.axios.get("./gameresource.json").then(response => {
-          console.log(response);
           PIXI.loader.add(response.data).load(() => {
             resolve();
           });

@@ -67,17 +67,19 @@ class PixiSlider extends PIXI.Container {
     }
     init() {
         const self = this;
+        //设置横向
         if (this.swiperDirection == 'horizontal') {
             this.initialHorizontal();
         } else {
+            //设置纵向
             this.initialVertical();
         };
+        //是一个计数器
         self.gameTicker.add(() => {
             self.dragTimeDelta++;
         });
 
-    }
-
+    };
     updateAll() {
         if (this.wrapper) {
             this.wrapper.removeListener('pointerdown', this.ver_pointerdown, this);
@@ -89,19 +91,22 @@ class PixiSlider extends PIXI.Container {
             this.wrapper.removeListener('pointermove', this.hor_pointermove, this);
             this.wrapper.removeListener('pointerup', this.hor_pointerup, this);
             this.wrapper.removeListener('pointerupoutside', this.hor_pointerup, this);
+            //移除所有的容器
             this.wrapper.removeChildren();
-            this.wrapper.destroy()
-                // this.wrapper.removeChildren();
+            //摧毁容器
+            this.wrapper.destroy();
+            // this.wrapper.removeChildren();
+            //移除所有的根目录下的内容
             this.removeChildren();
         }
-        this.slides = 5;
-        this.slidesArr = [];
-        this.slideWidth = 200;
-        this.slideHeight = 100;
-        this.slideOffset = 10;
+        this.slides = 5; //滑块的个数
+        this.slidesArr = []; //滑块数组
+        this.slideWidth = 200; //一个滑块的宽度
+        this.slideHeight = 100; //一个滑块的高度
+        this.slideOffset = 10; //一个滑块的偏离的宽度
         this.slideOffsetWidth = null; //所有间隙总宽度;
-        this.swiperWidth = 200;
-        this.swiperHeight = 400;
+        this.swiperWidth = 200; //一个滑动条的宽度
+        this.swiperHeight = 400; //一个滑动条的高度
         this.slideColorAlpha = 0;
 
         this.wrapper = null; //滑动区域;
@@ -133,55 +138,50 @@ class PixiSlider extends PIXI.Container {
         }
 
 
-    }
-
+    };
+    //设置纵向
     initialVertical() {
-        const self = this;
-        //设置滑动区域
-        self.wrapper = new PIXI.Container();
-        self.wrapper.buttonMode = true;
-        self.wrapper.interactive = true;
-        for (let i = 0; i < this.slides; i++) {
-            let slideBar = new PIXI.Container();
-            self.slidesArr.push(slideBar);
+            const self = this;
+            //设置滑动区域
+            self.wrapper = new PIXI.Container();
+            self.wrapper.buttonMode = true;
+            self.wrapper.interactive = true;
+            for (let i = 0; i < this.slides; i++) {
+                //给每个滑动块设置为一个容器
+                let slideBar = new PIXI.Container();
+                slideBar.y = i * (self.slideHeight + self.slideOffset);
+                //把每一个容器放进一个数组里面
+                self.slidesArr.push(slideBar);
+                //给每一个滑块容器添加一个蒙层
+                let slideContainer = new PIXI.Graphics();
+                slideContainer.beginFill(0xff0000, self.slideColorAlpha);
+                slideContainer.drawRect(0, 0, self.slideWidth, self.slideHeight);
+                slideContainer.endFill();
+                slideBar.addChild(slideContainer);
+                self.wrapper.addChild(slideBar);
+                self.slideOffsetWidth += self.slideOffset;
+            }
+            self.slideOffsetWidth -= self.slideOffset; //要减去一个得到间隔距离总数
+            let wrapperMask = new PIXI.Graphics();
+            wrapperMask.beginFill(0x00ff00);
+            wrapperMask.drawRect(0, 0, self.swiperWidth, self.swiperHeight);
+            wrapperMask.endFill();
 
-            let slideContainer = new PIXI.Graphics();
-            slideContainer.beginFill(0xff0000, self.slideColorAlpha);
-            slideContainer.drawRect(0, 0, self.slideWidth, self.slideHeight);
-            slideContainer.endFill();
-            slideBar.addChild(slideContainer);
+            this._minimalPos = -1 * (self.wrapper.height - self.swiperHeight);
+            this._maxiumPos = 0;
+
+            self.wrapper.mask = wrapperMask;
+            self.addChild(wrapperMask)
+            self.addChild(self.wrapper);
 
 
-            slideBar.y = i * (self.slideHeight + self.slideOffset);
-
-            self.wrapper.addChild(slideBar);
-            self.slideOffsetWidth += self.slideOffset;
-
+            self.wrapper.on('pointerdown', this.ver_pointerdown, this);
+            self.wrapper.on('pointermove', this.ver_pointermove, this);
+            self.wrapper.on('pointerup', this.ver_pointerup, this);
+            self.wrapper.on('pointerupoutside', this.ver_pointerup, this);
 
         }
-        self.slideOffsetWidth -= self.slideOffset; //要减去一个得到间隔距离总数
-
-
-        let wrapperMask = new PIXI.Graphics();
-        wrapperMask.beginFill(0x00ff00);
-        wrapperMask.drawRect(0, 0, self.swiperWidth, self.swiperHeight);
-        wrapperMask.endFill();
-
-        this._minimalPos = -1 * (self.wrapper.height - self.swiperHeight);
-        this._maxiumPos = 0;
-
-        self.wrapper.mask = wrapperMask;
-        self.addChild(wrapperMask)
-        self.addChild(self.wrapper);
-
-
-        self.wrapper.on('pointerdown', this.ver_pointerdown, this);
-        self.wrapper.on('pointermove', this.ver_pointermove, this);
-        self.wrapper.on('pointerup', this.ver_pointerup, this);
-        self.wrapper.on('pointerupoutside', this.ver_pointerup, this);
-
-    }
-
+        //设置横向
     initialHorizontal() {
             const self = this;
             //设置滑动区域
@@ -280,10 +280,7 @@ class PixiSlider extends PIXI.Container {
             if (currentTarget.x >= 0) {
                 currentTarget.x = 0;
             };
-
-
             self.dragTimeDelta = 0;
-
 
         }
     }
@@ -299,43 +296,37 @@ class PixiSlider extends PIXI.Container {
         self.callback_pointerUp.call(self, {
             movedOffset: self.movedOffset
         })
-
         if (self._movedPosArr.length > 0) {
             self._movedPosArr = [];
         };
-
         self.gameTicker.stop();
         if (self.smoothingMode == true) {
             self.smoothSliding.call(self)
         }
-
-
         self.dragTimeDelta = 0;
-
-
     }
     slideTo($slideNum = 0, $times = .3) {
 
-            const self = this;
-            this.realIndex = $slideNum;
+        const self = this;
+        this.realIndex = $slideNum;
 
-            if (self.swiperDirection == 'horizontal') {
-                self._slideToTween = TweenMax.to(self.wrapper, $times, {
-                    x: -1 * ($slideNum * this.slideWidth),
-                    onStart: function() {
-                        self.slideIsEnd = false;
-                    },
-                    onComplete: function() {
-                        self.slideIsEnd = true;
-                        //  self.movedOffset = NaN;
-                    }
-                });
-            } else if (self.swiperDirection == 'vertical') {
-
-            }
+        if (self.swiperDirection == 'horizontal') {
+            self._slideToTween = TweenMax.to(self.wrapper, $times, {
+                x: -1 * ($slideNum * this.slideWidth),
+                onStart: function() {
+                    self.slideIsEnd = false;
+                },
+                onComplete: function() {
+                    self.slideIsEnd = true;
+                    //  self.movedOffset = NaN;
+                }
+            });
+        } else if (self.swiperDirection == 'vertical') {
 
         }
-        //竖向;
+
+    };
+    //竖向;
     ver_pointerdown(event) {
         const self = this;
         self.dragMoving = true;

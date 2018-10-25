@@ -111,8 +111,6 @@ class RightDrawer extends PIXI.Container {
         }
 
 
-
-
     }
     clearBtn_TapHandler(index, evt) {
         const self = this;
@@ -152,150 +150,148 @@ class RightDrawer extends PIXI.Container {
         this.emitClearCloth = $callback;
     }
     init() {
-        const self = this;
-        // this.setClassDrawerArr(["",])
-        //初始化classDrawer;
-        initialClassDrawer.call(this);
-        initialclothesDrawer.call(this);
-        //this.showclothesDrawer.call(this)
-        this.showClassDrawer.call(this);
-
-
-        function initialClassDrawer() {
-            this.classDrawer = new PIXI.Container();
-            var classDrawer_slider = new PIXISlider();
-            //创建滑块数长度
-            classDrawer_slider.slides = this.classDrawerBtnArr.length;
-            //设置整个滑块的长度和宽度
-            classDrawer_slider.swiperWidth = 216;
-            classDrawer_slider.swiperHeight = 888;
-            //设置单个滑块的长度和宽度
-            classDrawer_slider.slideWidth = 216;
-            classDrawer_slider.slideHeight = 175;
-            //设置滑块的透明度
-            classDrawer_slider.slideColorAlpha = 0;
-            //设置单个滑块的偏离长度
-            classDrawer_slider.slideOffset = 15;
-            //设置滑块的垂直方向
-            classDrawer_slider.swiperDirection = 'vertical'
+            const self = this;
+            // this.setClassDrawerArr(["",])
+            //初始化classDrawer;
+            initialClassDrawer.call(this);
+            initialclothesDrawer.call(this);
+            //this.showclothesDrawer.call(this)
+            this.showClassDrawer.call(this);
+            //确立了具体的类别的抽屉
+            function initialClassDrawer() {
+                this.classDrawer = new PIXI.Container();
+                var classDrawer_slider = new PIXISlider();
+                //创建滑块数长度
+                classDrawer_slider.slides = this.classDrawerBtnArr.length;
+                //设置整个滑块条的长度和宽度
+                classDrawer_slider.swiperWidth = 216;
+                classDrawer_slider.swiperHeight = 888;
+                //设置单个滑块的长度和宽度
+                classDrawer_slider.slideWidth = 216;
+                classDrawer_slider.slideHeight = 175;
+                //设置滑块的透明度
+                classDrawer_slider.slideColorAlpha = 0;
+                //设置单个滑块的偏离长度
+                classDrawer_slider.slideOffset = 15;
+                //设置滑块的垂直方向
+                classDrawer_slider.swiperDirection = 'vertical';
                 //对滑块进行初始化
-            classDrawer_slider.init();
-            //对滑块进行初始化加载到屏幕容器上
-            this.classDrawer.addChild(classDrawer_slider);
-            //不清楚这句话的作用...
-            let masker = new PIXI.Graphics();
-            masker.beginFill(0xff0000);
-            masker.drawRoundedRect(0, 0, classDrawer_slider.swiperWidth, classDrawer_slider.swiperHeight, 25);
-            masker.endFill();
-            this.addChild(masker);
-            this.classDrawer.mask = masker;
-            this.addChild(this.classDrawer);
-            this.classDrawer.x = 218;
-            //这句话结束
+                classDrawer_slider.init();
+                //对滑块进行初始化加载到屏幕容器上
+                this.classDrawer.addChild(classDrawer_slider);
+                //不清楚这句话的作用...
+                let masker = new PIXI.Graphics();
+                masker.beginFill(0xff0000);
+                masker.drawRoundedRect(0, 0, classDrawer_slider.swiperWidth, classDrawer_slider.swiperHeight, 25);
+                masker.endFill();
+                this.addChild(masker);
+                this.classDrawer.mask = masker;
+                this.addChild(this.classDrawer);
+                this.classDrawer.x = 218;
+                //这句话结束
 
-            //背景;
-            for (let i = 0; i < this.classDrawerBtnArr.length; i++) {
-                var classDrawer_bg = new PIXI.Sprite(PIXI.Texture.from('classbtns_png'));
-                classDrawer_slider.slidesArr[i].addChild(classDrawer_bg);
-                let icons = new PIXI.Sprite(PIXI.Texture.from(this.classDrawerBtnArr[i]));
-                classDrawer_slider.slidesArr[i].addChild(icons);
-                icons.x = 40;
-                icons.y = 15;
-                classDrawer_bg.interactive = true;
-                classDrawer_bg.on('pointertap', self.classDrawBtn_tapHandler.bind(self, i), this)
+                //背景图及其具体实例的类别的;
+                for (let i = 0; i < this.classDrawerBtnArr.length; i++) {
+                    var classDrawer_bg = new PIXI.Sprite(PIXI.Texture.from('classbtns_png'));
+                    classDrawer_slider.slidesArr[i].addChild(classDrawer_bg);
+                    let icons = new PIXI.Sprite(PIXI.Texture.from(this.classDrawerBtnArr[i]));
+                    classDrawer_slider.slidesArr[i].addChild(icons);
+                    icons.x = 40;
+                    icons.y = 15;
+                    classDrawer_bg.interactive = true;
+                    classDrawer_bg.on('pointertap', self.classDrawBtn_tapHandler.bind(self, i), this)
+                }
+            };
+
+            //初始化实体抽屉(具体的抽屉的位置);
+            function initialclothesDrawer() {
+                this.clothesDrawer = new PIXI.Container();
+                this.clothesDrawer_slider = new PIXISlider();
+                this.clothesDrawer_slider.slides = 5;
+                this.clothesDrawer_slider.swiperWidth = 400;
+                this.clothesDrawer_slider.swiperHeight = 760;
+                this.clothesDrawer_slider.slideWidth = 400;
+                this.clothesDrawer_slider.slideHeight = 180;
+
+                this.clothesDrawer_slider.slideOffset = 25;
+                this.clothesDrawer_slider.swiperDirection = 'vertical';
+                this.clothesDrawer_slider.slideColorAlpha = 0;
+                this.clothesDrawer_slider.x = -180;
+                this.clothesDrawer_slider.y = 60;
+                this.clothesDrawer_slider.init();
+
+
+                var objectDrawBg = new PIXI.Sprite(PIXI.Texture.from('decoratebtns_png'));
+                objectDrawBg.pivot.x = 0;
+                objectDrawBg.pivot.y = 0;
+                objectDrawBg.x = -320;
+                this.clothesDrawer.addChild(objectDrawBg);
+                this.clothesDrawer.addChild(this.clothesDrawer_slider);
+                this.addChild(this.clothesDrawer);
+                this.clothesDrawer.x = 600;
+
+                // //背景;
+
+                this.clothesLittleBtn = new PIXI.Sprite();
+                this.clothesLittleBtn.x = -305 - 10;
+                this.clothesLittleBtn.y = 400 - 5;
+                this.clothesDrawer.addChild(this.clothesLittleBtn);
+                this.clothesLittleBtn.interactive = true;
+                this.clothesLittleBtn.on('pointertap', this.clothesLittleBtn_TapHandler, this);
+                this.clothesLittleBtn.buttonMode = true;
             }
-        };
 
-        //初始化实体抽屉;
-        function initialclothesDrawer() {
-            this.clothesDrawer = new PIXI.Container();
-            this.clothesDrawer_slider = new PIXISlider();
-            this.clothesDrawer_slider.slides = 5;
-            this.clothesDrawer_slider.swiperWidth = 400;
-            this.clothesDrawer_slider.swiperHeight = 760;
-            this.clothesDrawer_slider.slideWidth = 400;
-            this.clothesDrawer_slider.slideHeight = 180;
+            this.upperLine = new PIXI.Sprite(PIXI.Texture.from('shadowline_png'));
+            this.downLine = new PIXI.Sprite(PIXI.Texture.from('shadowline_png'));
 
-            this.clothesDrawer_slider.slideOffset = 25;
-            this.clothesDrawer_slider.swiperDirection = 'vertical';
-            this.clothesDrawer_slider.slideColorAlpha = 0;
-            this.clothesDrawer_slider.x = -180;
-            this.clothesDrawer_slider.y = 60;
-            this.clothesDrawer_slider.init();
+            this.upperLine.x = 0;
+            this.upperLine.y = 0;
+            this.addChild(this.upperLine)
+            this.downLine.x = 0;
+            this.downLine.scale.y = -1;
+            this.downLine.y = this.classDrawer.getChildAt(0).swiperHeight;
+            this.addChild(this.downLine)
+            this.upperLine.alpha = this.downLine.alpha = 0;
+
+            let heightC = self.classDrawer.getChildAt(0).wrapper.height - self.classDrawer.getChildAt(0).swiperHeight;
+            self.tickers = new PIXI.ticker.Ticker();
+            self.tickers.add(() => {
+                if (self.classDrawer.getChildAt(0).wrapper.y <= 0 && self.classDrawer.getChildAt(0).wrapper.y >= -16) {
+                    self.upperLine.alpha = 0;
+                } else {
+                    self.upperLine.alpha = 1;
+                }
+
+                if (self.classDrawer.getChildAt(0).wrapper.y <= -1 * heightC + 20) {
+                    self.downLine.alpha = 0;
+                } else {
+                    self.downLine.alpha = 1;
+                }
+            })
+            self.tickers.start();
 
 
-            var objectDrawBg = new PIXI.Sprite(PIXI.Texture.from('decoratebtns_png'));
-            objectDrawBg.pivot.x = 0;
-            objectDrawBg.pivot.y = 0;
-            objectDrawBg.x = -320;
-            this.clothesDrawer.addChild(objectDrawBg);
-            this.clothesDrawer.addChild(this.clothesDrawer_slider);
-            this.addChild(this.clothesDrawer);
-            this.clothesDrawer.x = 600;
 
-            // //背景;
-
-            this.clothesLittleBtn = new PIXI.Sprite();
-            this.clothesLittleBtn.x = -305 - 10;
-            this.clothesLittleBtn.y = 400 - 5;
-            this.clothesDrawer.addChild(this.clothesLittleBtn);
-            this.clothesLittleBtn.interactive = true;
-            this.clothesLittleBtn.on('pointertap', this.clothesLittleBtn_TapHandler, this);
-            this.clothesLittleBtn.buttonMode = true;
         }
-
-        this.upperLine = new PIXI.Sprite(PIXI.Texture.from('shadowline_png'));
-        this.downLine = new PIXI.Sprite(PIXI.Texture.from('shadowline_png'));
-
-        this.upperLine.x = 0;
-        this.upperLine.y = 0;
-        this.addChild(this.upperLine)
-        this.downLine.x = 0;
-        this.downLine.scale.y = -1;
-        this.downLine.y = this.classDrawer.getChildAt(0).swiperHeight;
-        this.addChild(this.downLine)
-        this.upperLine.alpha = this.downLine.alpha = 0;
-
-
-        let heightC = self.classDrawer.getChildAt(0).wrapper.height - self.classDrawer.getChildAt(0).swiperHeight;
-        self.tickers = new PIXI.ticker.Ticker();
-        self.tickers.add(() => {
-            if (self.classDrawer.getChildAt(0).wrapper.y <= 0 && self.classDrawer.getChildAt(0).wrapper.y >= -16) {
-                self.upperLine.alpha = 0;
-            } else {
-                self.upperLine.alpha = 1;
-            }
-
-            if (self.classDrawer.getChildAt(0).wrapper.y <= -1 * heightC + 20) {
-                self.downLine.alpha = 0;
-            } else {
-                self.downLine.alpha = 1;
-            }
-        })
-        self.tickers.start();
-
-
-
-    }
-
+        //小按钮事件...
     clothesLittleBtn_TapHandler(e) {
-        const self = this;
-        if (this.clothesDrawerAnimating == false) {
+            const self = this;
+            if (this.clothesDrawerAnimating == false) {
 
-            PIXI.sound.play('pullout')
-            this.hideclothesDrawer.call(this, () => {
-                self.tickers.start();
+                PIXI.sound.play('pullout')
+                this.hideclothesDrawer.call(this, () => {
+                    self.tickers.start();
 
-            });
-            this.showClassDrawer.call(this, () => {
-                // self.clothesDrawerAnimating = false;
-                self.classDrawerAnimating = false;
-            });
-            this.clothesDrawerAnimating = true;
+                });
+                this.showClassDrawer.call(this, () => {
+                    // self.clothesDrawerAnimating = false;
+                    self.classDrawerAnimating = false;
+                });
+                this.clothesDrawerAnimating = true;
+            }
+
         }
-
-    }
-
+        //类按钮事件...
     classDrawBtn_tapHandler(index, event) {
         const self = this;
 
@@ -313,7 +309,6 @@ class RightDrawer extends PIXI.Container {
                 });
                 this.classDrawerAnimating = true;
                 let regs = this.classDrawerBtnArr[index].replace(/^classicon_|_png$/g, '');
-
 
                 this.classIconName = this.classDrawerBtnArr[index];
                 this.clothesLittleBtn.texture = PIXI.Texture.from(this.classIconName + "_s");
